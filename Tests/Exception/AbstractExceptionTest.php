@@ -10,7 +10,7 @@ use EXSyst\Component\Rest\Exception\ExceptionInterface;
 abstract class AbstractExceptionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \EXSyst\Component\IO\Exception\ExceptionInterface
+     * @var \EXSyst\Component\Rest\Exception\ExceptionInterface
      */
     protected $exception;
 
