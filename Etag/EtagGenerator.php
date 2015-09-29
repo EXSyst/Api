@@ -2,7 +2,7 @@
 
 namespace EXSyst\Component\Rest\Etag;
 
-use EXSyst\Component\Rest\Etag\EtaggableInterface;
+use EXSyst\Component\Rest\Exception;
 
 class EtagGenerator
 {
@@ -10,7 +10,14 @@ class EtagGenerator
     const CONTAINER_OPENING = '(';
     const CONTAINER_CLOSING = ')';
 
-    public function getEtag($value)
+    /**
+     * @param mixed $value
+     *
+     * @return string
+     *
+     * @throws Exception\LogicException when the value is not supported
+     */
+    public function generate($value)
     {
         if (is_string($value) or is_numeric($value)) {
             return md5($value);
@@ -28,7 +35,7 @@ class EtagGenerator
         } elseif ($value === null) {
             return md5('null');
         } else {
-            throw new \LogicException('not implemented');
+            throw new Exception\LogicException('not implemented');
         }
     }
 }
