@@ -2,8 +2,6 @@
 
 namespace EXSyst\Component\Rest\Etag;
 
-use EXSyst\Component\Rest\Exception;
-
 class EtagGenerator
 {
     const VALUE_SEPARATOR = '/';
@@ -13,9 +11,7 @@ class EtagGenerator
     /**
      * @param mixed $value
      *
-     * @throws Exception\LogicException when the value is not supported
-     *
-     * @return string
+     * @return string|false
      */
     public function generate($value)
     {
@@ -32,10 +28,8 @@ class EtagGenerator
             return md5($return);
         } elseif ($value instanceof EtaggableInterface) {
             return md5($value->getEtag());
-        } elseif ($value === null) {
-            return md5('null');
-        } else {
-            throw new Exception\LogicException('This value can\'t be transformed in an etag. If it is an object, you must use EXSyst\Component\Rest\Etag\EtaggableInterface.');
         }
+
+        return false;
     }
 }

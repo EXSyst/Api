@@ -48,15 +48,7 @@ class EtagGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(md5($etag), $this->generator->generate($object));
     }
 
-    public function testGenerationWithNull() {
-        $this->assertEquals(md5('null'), $this->generator->generate(null));
-    }
-
-    /**
-     * @expectedException EXSyst\Component\Rest\Exception\LogicException
-     * @expectedExceptionMessage etag
-     */
     public function testGenerationWithAnUnsupportedObject() {
-        $this->generator->generate(new \stdClass());
+        $this->assertFalse($this->generator->generate(new \stdClass()));
     }
 }
