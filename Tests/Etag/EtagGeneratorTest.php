@@ -19,8 +19,6 @@ class EtagGeneratorTest extends \PHPUnit_Framework_TestCase
 
     public function testConstants() {
         $this->assertEquals('/', EtagGenerator::VALUE_SEPARATOR);
-        $this->assertEquals('(', EtagGenerator::CONTAINER_OPENING);
-        $this->assertEquals(')', EtagGenerator::CONTAINER_CLOSING);
     }
 
     public function testGenerationWithAScalarValue() {
@@ -31,9 +29,7 @@ class EtagGeneratorTest extends \PHPUnit_Framework_TestCase
     public function testGenerationWithAnArray() {
         $this->assertEquals(
             md5(
-                '('.
-                    md5('barfoo').'/'.md5('bar').'//'.
-                ')'
+                md5('barfoo').'/'.md5('bar').'//'
             ),
             $this->generator->generate([
                 'barfoo' => 'bar'
