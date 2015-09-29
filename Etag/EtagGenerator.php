@@ -21,8 +21,7 @@ class EtagGenerator
     {
         if (is_scalar($value)) {
             return md5($value);
-        }
-        if (is_array($value)) {
+        } elseif (is_array($value)) {
             $return = self::CONTAINER_OPENING;
             foreach ($value as $k => $v) {
                 $return .= $this->generate($k).self::VALUE_SEPARATOR.$this->generate($v);
