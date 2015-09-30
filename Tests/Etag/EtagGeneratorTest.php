@@ -3,6 +3,7 @@
 namespace EXSyst\Component\Rest\Tests\Etag;
 
 use EXSyst\Component\Rest\Etag\EtagGenerator;
+use EXSyst\Component\Rest\Etag\Etag;
 use EXSyst\Component\Rest\Tests\Fixtures\EtaggableObject;
 
 /**
