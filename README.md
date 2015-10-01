@@ -2,4 +2,4 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/EXSyst/Rest/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EXSyst/Rest/?branch=master)
 
 # EXSyst Rest Component
-Provides several helpers to you make a rest API.
+Provides several helpers to make a rest API.

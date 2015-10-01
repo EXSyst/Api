@@ -12,7 +12,7 @@ class EtaggableObject implements EtaggableInterface
         $this->etag = $etag;
     }
 
-    public function getEtag() {
+    public function getEtag($strategy) {
         return $this->etag;
     }
 }
