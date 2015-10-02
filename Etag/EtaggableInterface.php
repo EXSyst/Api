@@ -2,6 +2,9 @@
 
 namespace EXSyst\Component\Rest\Etag;
 
+/**
+ * @author Ener-Getick <egetick@gmail.com>
+ */
 interface EtaggableInterface
 {
     /**

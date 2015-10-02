@@ -2,6 +2,9 @@
 
 namespace EXSyst\Component\Rest\Etag;
 
+/**
+ * @author Exter-n <exter-n@exter-n.fr>
+ */
 final class EtagStrategy
 {
     const PREFER_STRONG = 0;
