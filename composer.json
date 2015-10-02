@@ -1,27 +1,33 @@
 {
-    "name": "exsyst/rest",
-    "type": "library",
-    "description": "Provides several helpers to build your rest API",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "EXSyst"
-        }
-    ],
-    "require": {
-        "php": ">=5.5"
-    },
-    "require-dev": {
-		"symfony/phpunit-bridge": "~2.7"
-    },
-    "autoload": {
-        "psr-4": {
-            "EXSyst\\Component\\Rest\\": ""
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.0.x-dev"
-        }
-    }
+	"name": "exsyst/rest",
+	"type": "library",
+	"description": "Provides several helpers to build your rest API",
+	"license": "Apache-2.0",
+	"authors": [{
+		"name": "EXSyst"
+	}],
+	"require": {
+		"php": ">=5.5"
+	},
+	"require-dev": {
+		"symfony/phpunit-bridge": "~2.7|^3.0",
+		"symfony/validator": "~2.7|^3.0",
+		"symfony/http-foundation": "~2.7|^3.0",
+		"doctrine/annotations": "^1.0"
+	},
+	"suggest": {
+		"doctrine/annotations": "For using parameters annotations",
+		"symfony/validator": "For using parameters validation",
+		"symfony/http-foundation": "For using parameters validation"
+	},
+	"autoload": {
+		"psr-4": {
+			"EXSyst\\Component\\Rest\\": ""
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.0.x-dev"
+		}
+	}
 }
