@@ -4,7 +4,6 @@ namespace EXSyst\Component\Rest\Parameter;
 
 use Doctrine\Common\Annotations\Reader;
 use EXSyst\Component\Rest\Annotation\AbstractParameter;
-use EXSyst\Component\Rest\Exception;
 
 class ParameterReader
 {
@@ -12,10 +11,6 @@ class ParameterReader
      * @var Reader
      */
     private $annotationReader;
-    /**
-     * @var \ReflectionMethod
-     */
-    private $reflectionMethod;
 
     /**
      * @param Reader $annotationReader
@@ -26,40 +21,14 @@ class ParameterReader
     }
 
     /**
-     * @param \ReflectionMethod
-     *
-     * @return $this
-     */
-    public function setMethod(\ReflectionMethod $reflectionMethod)
-    {
-        $this->reflectionMethod = $reflectionMethod;
-
-        return $this;
-    }
-
-    /**
-     * @throws Exception\InvalidArgumentException
+     * @param \ReflectionMethod $reflectionMethod
      *
      * @return AbstractParameter[]
      */
-    public function read()
-    {
-        if ($this->reflectionMethod === null) {
-            throw new Exception\InvalidArgumentException('You must define the method you want to read by calling Parameter::setMethod().');
-        }
-
-        return $this->getMethodParameters($this->reflectionMethod);
-    }
-
-    /**
-     * @param \ReflectionClass $method
-     *
-     * @return AbstractParameter[]
-     */
-    private function getMethodParameters(\ReflectionMethod $method)
+    public function read(\ReflectionMethod $reflectionMethod)
     {
         $parameters = [];
-        foreach ($this->annotationReader->getMethodAnnotations($method) as $annotation) {
+        foreach ($this->annotationReader->getMethodAnnotations($reflectionMethod) as $annotation) {
             if ($annotation instanceof AbstractParameter) {
                 $parameters[] = $annotation;
             }
