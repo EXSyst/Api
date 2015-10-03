@@ -3,7 +3,6 @@
 namespace EXSyst\Component\Rest\Tests\Etag;
 
 use EXSyst\Component\Rest\Etag\EtagGenerator;
-use EXSyst\Component\Rest\Etag\Etag;
 use EXSyst\Component\Rest\Tests\Fixtures\EtaggableObject;
 
 /**
@@ -18,34 +17,39 @@ class EtagGeneratorTest extends \PHPUnit_Framework_TestCase
         $this->generator = new EtagGenerator();
     }
 
-    public function testConstants() {
+    public function testConstants()
+    {
         $this->assertEquals('/', EtagGenerator::VALUE_SEPARATOR);
     }
 
-    public function testGenerationWithAScalarValue() {
+    public function testGenerationWithAScalarValue()
+    {
         $this->assertEquals(md5(10), $this->generator->generate(10));
         $this->assertEquals(md5('foo'), $this->generator->generate('foo'));
     }
 
-    public function testGenerationWithAnArray() {
+    public function testGenerationWithAnArray()
+    {
         $this->assertEquals(
             md5(
                 md5('barfoo').'/'.md5('bar').'//'
             ),
             $this->generator->generate([
-                'barfoo' => 'bar'
+                'barfoo' => 'bar',
             ])
         );
     }
 
-    public function testGenerationWithAnEtaggableObject() {
+    public function testGenerationWithAnEtaggableObject()
+    {
         $etag = 'thisetagisastring';
         $object = new EtaggableObject($etag);
 
         $this->assertEquals(md5($etag), $this->generator->generate($object));
     }
 
-    public function testGenerationWithAnUnsupportedObject() {
+    public function testGenerationWithAnUnsupportedObject()
+    {
         $this->assertFalse($this->generator->generate(new \stdClass()));
     }
 }
