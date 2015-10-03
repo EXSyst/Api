@@ -13,7 +13,7 @@ abstract class BaseParameterTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->request = new Request();
-        $this->bag = $this->getMock(ParameterBag::class, array());
+        $this->bag = $this->getMock(ParameterBag::class, []);
         $this->request->{ $this->getRequestBag() } = $this->bag;
     }
 
@@ -49,5 +49,6 @@ abstract class BaseParameterTest extends \PHPUnit_Framework_TestCase
     }
 
     abstract public function getParameterClass();
+
     abstract public function getRequestBag();
 }

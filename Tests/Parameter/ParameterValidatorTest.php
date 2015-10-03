@@ -38,7 +38,7 @@ class ParameterValidatorTest extends \PHPUnit_Framework_TestCase
     public function testValidation()
     {
         $parameter = $this->createParameter([
-            'name' => 'foo',
+            'name'        => 'foo',
             'constraints' => $constraints = [
                 new Constraints\NotNull(),
                 new Constraints\Valid(),
@@ -86,10 +86,10 @@ class ParameterValidatorTest extends \PHPUnit_Framework_TestCase
     {
         return $this->getMock(
             AbstractParameter::class,
-            array('exists', 'getValue'),
-            array(
+            ['exists', 'getValue'],
+            [
                 $options,
-            )
+            ]
         );
     }
 }

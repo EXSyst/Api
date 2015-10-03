@@ -61,7 +61,7 @@ class AbstractParameterTest extends \PHPUnit_Framework_TestCase
     public function testInvalidConstraintsSetting()
     {
         $this->createParameter([
-            'value' => 'foo',
+            'value'       => 'foo',
             'constraints' => [new Constraints\NotNull(), new self(), new Constraints\Valid()],
         ]);
     }
