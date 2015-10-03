@@ -10,7 +10,8 @@ use EXSyst\Component\Rest\Etag\ExtendedEtaggableInterface;
  */
 class ExtendedEtaggableInterfaceTest extends \PHPUnit_Framework_TestCase
 {
-    public function testInterface() {
+    public function testInterface()
+    {
         $etag = $this->getMock(ExtendedEtaggableInterface::class);
         $this->assertInstanceof(EtaggableInterface::class, $etag);
     }

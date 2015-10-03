@@ -11,11 +11,13 @@ class EtaggableObject implements EtaggableInterface
 {
     private $etag;
 
-    public function __construct($etag) {
+    public function __construct($etag)
+    {
         $this->etag = $etag;
     }
 
-    public function getEtag($strategy) {
+    public function getEtag($strategy)
+    {
         return $this->etag;
     }
 }

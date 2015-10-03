@@ -18,7 +18,7 @@ class EtagGenerator
     public function generate($value, $strategy = EtagStrategy::PREFER_STRONG)
     {
         list($etag, $strategy) = $this->processField($value, $strategy);
-        if($strategy === EtagStrategy::PREFER_WEAK) {
+        if ($strategy === EtagStrategy::PREFER_WEAK) {
             $etag->setWeak(true);
         }
 
