@@ -22,7 +22,7 @@ class EtagGenerator
             $etag->setWeak(true);
         }
 
-        return false;
+        return $etag;
     }
 
     /**
