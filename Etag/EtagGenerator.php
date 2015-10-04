@@ -36,7 +36,7 @@ class EtagGenerator
         if ($value instanceof Etag) {
             return [$value, $strategy];
         } elseif (is_scalar($value)) {
-            return [new Etag($value), $strategy];
+            return [new Etag($this->hash($value)), $strategy];
         } elseif (is_array($value)) {
             $newValue = '';
             $newStrategy = $strategy;
