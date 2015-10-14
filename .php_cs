@@ -10,7 +10,7 @@ $finder = DefaultFinder::create()
 ;
 
 $header = <<<EOF
-This file is part of the Rest package.
+This file is part of the RestBundle package.
 
 (c) EXSyst
 
@@ -21,7 +21,7 @@ HeaderCommentFixer::setHeader($header);
 
 return Config::create()
     ->level(FixerInterface::SYMFONY_LEVEL)
-    ->fixers(array('align_double_arrow', 'header_comment'))
+    ->fixers(array('align_double_arrow', 'header_comment', 'ordered_use'))
     ->finder($finder)
     ->setUsingCache(true)
 ;
