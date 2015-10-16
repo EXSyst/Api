@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Etag;
+namespace EXSyst\Component\Api\Tests\Etag;
 
-use EXSyst\Component\Rest\Etag\EtaggableInterface;
-use EXSyst\Component\Rest\Etag\ExtendedEtaggableInterface;
+use EXSyst\Component\Api\Etag\EtaggableInterface;
+use EXSyst\Component\Api\Etag\ExtendedEtaggableInterface;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>

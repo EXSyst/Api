@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Parameter;
+namespace EXSyst\Component\Api\Tests\Parameter;
 
-use EXSyst\Component\Rest\Annotation\AbstractParameter;
-use EXSyst\Component\Rest\Parameter\ParameterValidator;
+use EXSyst\Component\Api\Annotation\AbstractParameter;
+use EXSyst\Component\Api\Parameter\ParameterValidator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Validator\Constraints;
@@ -35,7 +35,7 @@ class ParameterValidatorTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException EXSyst\Component\Rest\Exception\RuntimeException
+     * @expectedException EXSyst\Component\Api\Exception\RuntimeException
      * @expectedExceptionMessage no current request
      */
     public function testEmptyRequestStack()

@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/EXSyst/Rest.svg?branch=master)](https://travis-ci.org/EXSyst/Rest)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/EXSyst/Rest/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EXSyst/Rest/?branch=master)
+[![Build Status](https://travis-ci.org/EXSyst/Api.svg?branch=master)](https://travis-ci.org/EXSyst/Api)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/EXSyst/Api/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/EXSyst/Api/?branch=master)
 
-# EXSyst Rest Component
-Provides several helpers to make a rest API.
+# EXSyst Api Component
+Provides several helpers to make an api.

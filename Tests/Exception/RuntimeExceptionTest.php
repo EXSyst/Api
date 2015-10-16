@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Exception;
+namespace EXSyst\Component\Api\Tests\Exception;
 
-use EXSyst\Component\Rest\Exception\RuntimeException;
+use EXSyst\Component\Api\Exception\RuntimeException;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>

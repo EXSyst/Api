@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,12 +9,12 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Parameter;
+namespace EXSyst\Component\Api\Tests\Parameter;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use EXSyst\Component\Rest\Annotation;
-use EXSyst\Component\Rest\Parameter\ParameterReader;
-use EXSyst\Component\Rest\Tests\Fixtures\ControllerWithParameters;
+use EXSyst\Component\Api\Annotation;
+use EXSyst\Component\Api\Parameter\ParameterReader;
+use EXSyst\Component\Api\Tests\Fixtures\ControllerWithParameters;
 use Symfony\Component\Validator\Constraints;
 
 /**

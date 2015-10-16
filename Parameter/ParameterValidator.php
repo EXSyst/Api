@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Parameter;
+namespace EXSyst\Component\Api\Parameter;
 
-use EXSyst\Component\Rest\Annotation\AbstractParameter;
-use EXSyst\Component\Rest\Exception;
+use EXSyst\Component\Api\Annotation\AbstractParameter;
+use EXSyst\Component\Api\Exception;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Fixtures;
+namespace EXSyst\Component\Api\Tests\Fixtures;
 
-use EXSyst\Component\Rest\Annotation\FileParameter;
-use EXSyst\Component\Rest\Annotation\QueryParameter;
-use EXSyst\Component\Rest\Annotation\RequestParameter;
+use EXSyst\Component\Api\Annotation\FileParameter;
+use EXSyst\Component\Api\Annotation\QueryParameter;
+use EXSyst\Component\Api\Annotation\RequestParameter;
 use Symfony\Component\Validator\Constraints;
 
 class ControllerWithParameters

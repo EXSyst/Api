@@ -1,7 +1,7 @@
 {
-	"name": "exsyst/rest",
+	"name": "exsyst/api",
 	"type": "library",
-	"description": "Provides several helpers to build your rest API",
+	"description": "Provides several helpers to build your api",
 	"license": "Apache-2.0",
 	"authors": [{
 		"name": "EXSyst"
@@ -22,7 +22,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"EXSyst\\Component\\Rest\\": ""
+			"EXSyst\\Component\\Api\\": ""
 		}
 	},
 	"extra": {

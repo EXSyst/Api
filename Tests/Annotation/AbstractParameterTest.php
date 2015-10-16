@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Rest package.
+ * This file is part of the Api package.
  *
  * (c) EXSyst
  *
@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace EXSyst\Component\Rest\Tests\Annotation;
+namespace EXSyst\Component\Api\Tests\Annotation;
 
-use EXSyst\Component\Rest\Annotation\AbstractParameter;
+use EXSyst\Component\Api\Annotation\AbstractParameter;
 use Symfony\Component\Validator\Constraints;
 
 /**
@@ -37,7 +37,7 @@ class AbstractParameterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException EXSyst\Component\Rest\Exception\InvalidArgumentException
+     * @expectedException EXSyst\Component\Api\Exception\InvalidArgumentException
      * @expectedExceptionMessage must be a string
      */
     public function testCreationWithoutName()
@@ -46,7 +46,7 @@ class AbstractParameterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException EXSyst\Component\Rest\Exception\InvalidArgumentException
+     * @expectedException EXSyst\Component\Api\Exception\InvalidArgumentException
      * @expectedExceptionMessage must be a string
      */
     public function testInvalidNameSetting()
@@ -55,7 +55,7 @@ class AbstractParameterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException EXSyst\Component\Rest\Exception\InvalidArgumentException
+     * @expectedException EXSyst\Component\Api\Exception\InvalidArgumentException
      * @expectedExceptionMessage Parameter constraints
      */
     public function testNotArrayConstraintsSetting()
@@ -64,7 +64,7 @@ class AbstractParameterTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException EXSyst\Component\Rest\Exception\InvalidArgumentException
+     * @expectedException EXSyst\Component\Api\Exception\InvalidArgumentException
      * @expectedExceptionMessage Parameter constraints
      */
     public function testInvalidConstraintsSetting()
