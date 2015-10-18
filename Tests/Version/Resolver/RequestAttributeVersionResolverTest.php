@@ -33,8 +33,8 @@ class RequestAttributeVersionResolverTest extends \PHPUnit_Framework_TestCase
         $request = new Request();
 
         $resolver = new RequestAttributeVersionResolver([
-            'v1.2.3' => [],
-            '2.3'    => [],
+            'v1.2.3',
+            '2.3',
         ]);
 
         $this->assertFalse($resolver->resolve($request));
@@ -43,8 +43,8 @@ class RequestAttributeVersionResolverTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('v1.2.3', $resolver->resolve($request));
 
         $resolver = new RequestAttributeVersionResolver([
-            'v2'   => [],
-            'v2.4' => [],
+            'v2',
+            'v2.4',
         ]);
         $this->assertFalse($resolver->resolve($request));
     }
