@@ -13,6 +13,9 @@ namespace EXSyst\Component\Api\Version;
 
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @author Ener-Getick <egetick@gmail.com>
+ */
 class ChainVersionResolver implements VersionResolverInterface
 {
     /**

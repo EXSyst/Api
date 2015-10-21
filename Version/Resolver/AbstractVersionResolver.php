@@ -14,6 +14,9 @@ namespace EXSyst\Component\Api\Version\Resolver;
 use Composer\Semver\Semver;
 use EXSyst\Component\Api\Version\VersionResolverInterface;
 
+/**
+ * @author Ener-Getick <egetick@gmail.com>
+ */
 abstract class AbstractVersionResolver implements VersionResolverInterface
 {
     /**

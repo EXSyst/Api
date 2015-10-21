@@ -13,6 +13,9 @@ namespace EXSyst\Component\Api\Version\Resolver;
 
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * @author Ener-Getick <egetick@gmail.com>
+ */
 class RequestAttributeVersionResolver extends AbstractVersionResolver
 {
     /**
