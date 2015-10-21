@@ -36,10 +36,13 @@ abstract class AbstractVersionResolver implements VersionResolverInterface
      */
     protected function satisfiedBy($constraint)
     {
-        foreach ($this->versions as $version) {
-            if (Semver::satisfies($version, $constraint)) {
-                return $version;
+        try {
+            foreach ($this->versions as $version) {
+                if (Semver::satisfies($version, $constraint)) {
+                    return $version;
+                }
             }
+        } catch (\UnexpectedValueException $exception) {
         }
 
         return false;
