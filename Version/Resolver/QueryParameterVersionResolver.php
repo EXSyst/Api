@@ -12,11 +12,12 @@
 namespace EXSyst\Component\Api\Version\Resolver;
 
 use Symfony\Component\HttpFoundation\Request;
+use EXSyst\Component\Api\Version\VersionResolverInterface;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class QueryParameterVersionResolver extends AbstractVersionResolver
+class QueryParameterVersionResolver implements VersionResolverInterface
 {
     /**
      * @var string
@@ -24,13 +25,10 @@ class QueryParameterVersionResolver extends AbstractVersionResolver
     private $parameterName;
 
     /**
-     * {@inheritdoc}
-     *
      * @param string $parameterName
      */
-    public function __construct(array $versions, $parameterName = 'version')
+    public function __construct($parameterName = 'version')
     {
-        parent::__construct($versions);
         $this->parameterName = $parameterName;
     }
 
@@ -43,9 +41,6 @@ class QueryParameterVersionResolver extends AbstractVersionResolver
             return false;
         }
 
-        $currentVersion = $request->query->get($this->parameterName);
-        $constraint = '^'.$currentVersion;
-
-        return $this->satisfiedBy($constraint);
+        return $request->query->get($this->parameterName);
     }
 }

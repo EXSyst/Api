@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class RequestAttributeVersionResolver extends AbstractVersionResolver
+class RequestAttributeVersionResolver implements VersionResolverInterface
 {
     /**
      * @var string
@@ -24,13 +24,10 @@ class RequestAttributeVersionResolver extends AbstractVersionResolver
     private $attributeName;
 
     /**
-     * {@inheritdoc}
-     *
      * @param string $attributeName
      */
-    public function __construct(array $versions, $attributeName = 'version')
+    public function __construct($attributeName = 'version')
     {
-        parent::__construct($versions);
         $this->attributeName = $attributeName;
     }
 
@@ -43,9 +40,6 @@ class RequestAttributeVersionResolver extends AbstractVersionResolver
             return false;
         }
 
-        $currentVersion = $request->attributes->get($this->attributeName);
-        $constraint = '^'.$currentVersion;
-
-        return $this->satisfiedBy($constraint);
+        return $request->attributes->get($this->attributeName);
     }
 }

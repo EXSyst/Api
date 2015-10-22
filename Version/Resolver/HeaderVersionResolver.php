@@ -12,11 +12,12 @@
 namespace EXSyst\Component\Api\Version\Resolver;
 
 use Symfony\Component\HttpFoundation\Request;
+use EXSyst\Component\Api\Version\VersionResolverInterface;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class ConstraintVersionResolver extends AbstractVersionResolver
+class HeaderVersionResolver implements VersionResolverInterface
 {
     /**
      * @var string
@@ -24,13 +25,10 @@ class ConstraintVersionResolver extends AbstractVersionResolver
     private $headerName;
 
     /**
-     * {@inheritdoc}
-     *
      * @param string $headerName
      */
-    public function __construct(array $versions, $headerName = 'X-Accept-Version')
+    public function __construct($headerName = 'X-Accept-Version')
     {
-        parent::__construct($versions);
         $this->headerName = $headerName;
     }
 
@@ -43,8 +41,6 @@ class ConstraintVersionResolver extends AbstractVersionResolver
             return false;
         }
 
-        $constraint = $request->headers->get($this->headerName);
-
-        return $this->satisfiedBy($constraint);
+        return $request->headers->get($this->headerName);
     }
 }

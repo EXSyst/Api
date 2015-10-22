@@ -24,7 +24,7 @@ class QueryParameterVersionResolverTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceof(
             VersionResolverInterface::class,
-            new QueryParameterVersionResolver([])
+            new QueryParameterVersionResolver()
         );
     }
 
@@ -32,24 +32,10 @@ class QueryParameterVersionResolverTest extends \PHPUnit_Framework_TestCase
     {
         $request = new Request();
 
-        $resolver = new QueryParameterVersionResolver([
-            'v1.2.3',
-            '2.3',
-        ]);
-
+        $resolver = new QueryParameterVersionResolver();
         $this->assertFalse($resolver->resolve($request));
 
         $request->query->set('version', 'v1');
-        $this->assertEquals('v1.2.3', $resolver->resolve($request));
-
-        $resolver = new QueryParameterVersionResolver([
-            'v2',
-            'v2.4',
-        ]);
-        $this->assertFalse($resolver->resolve($request));
-    }
-
-    public function testInexistantParameter()
-    {
+        $this->assertEquals('v1', $resolver->resolve($request));
     }
 }

@@ -20,7 +20,7 @@
 		"doctrine/annotations": "For using parameters annotations",
 		"symfony/validator": "For using parameters validation",
 		"symfony/http-foundation": "For using parameters validation and version resolvers",
-		"composer/semver": "For using version resolvers"
+		"composer/semver": "For using the version matcher"
 	},
 	"autoload": {
 		"psr-4": {
@@ -29,7 +29,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "0.2.x-dev"
+			"dev-master": "0.3.x-dev"
 		}
 	}
 }

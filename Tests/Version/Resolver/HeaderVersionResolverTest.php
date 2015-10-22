@@ -11,20 +11,20 @@
 
 namespace EXSyst\Component\Api\Tests\Version\Resolver;
 
-use EXSyst\Component\Api\Version\Resolver\RequestAttributeVersionResolver;
+use EXSyst\Component\Api\Version\Resolver\HeaderVersionResolver;
 use EXSyst\Component\Api\Version\VersionResolverInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class RequestAttributeVersionResolverTest extends \PHPUnit_Framework_TestCase
+class ConstraintVersionResolverTest extends \PHPUnit_Framework_TestCase
 {
     public function testInterface()
     {
         $this->assertInstanceof(
             VersionResolverInterface::class,
-            new RequestAttributeVersionResolver([])
+            new HeaderVersionResolver()
         );
     }
 
@@ -32,20 +32,10 @@ class RequestAttributeVersionResolverTest extends \PHPUnit_Framework_TestCase
     {
         $request = new Request();
 
-        $resolver = new RequestAttributeVersionResolver([
-            'v1.2.3',
-            '2.3',
-        ]);
-
+        $resolver = new HeaderVersionResolver();
         $this->assertFalse($resolver->resolve($request));
 
-        $request->attributes->set('version', 'v1');
-        $this->assertEquals('v1.2.3', $resolver->resolve($request));
-
-        $resolver = new RequestAttributeVersionResolver([
-            'v2',
-            'v2.4',
-        ]);
-        $this->assertFalse($resolver->resolve($request));
+        $request->headers->set('X-Accept-Version', 'v1');
+        $this->assertEquals('v1', $resolver->resolve($request));
     }
 }

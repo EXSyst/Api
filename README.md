@@ -8,6 +8,12 @@ This component provides several tools to help build API's.
 [![Total Downloads](https://poser.pugx.org/EXSyst/api/downloads.svg)](https://packagist.org/packages/EXSyst/api)
 [![Latest Stable Version](https://poser.pugx.org/EXSyst/api/v/stable.svg)](https://packagist.org/packages/EXSyst/api)
 
+Documentation
+=============
+
+Please see the [UPGRADING.md](https://github.com/EXSyst/Api/blob/master/UPGRADING.md) for any
+relevant instructions when upgrading to a newer version.
+
 Installation
 ============
 Open a command console, enter your project directory and execute the
