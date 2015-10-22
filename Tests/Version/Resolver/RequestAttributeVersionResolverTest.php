@@ -11,20 +11,20 @@
 
 namespace EXSyst\Component\Api\Tests\Version\Resolver;
 
-use EXSyst\Component\Api\Version\Resolver\HeaderVersionResolver;
+use EXSyst\Component\Api\Version\Resolver\RequestAttributeVersionResolver;
 use EXSyst\Component\Api\Version\VersionResolverInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>
  */
-class HeaderVersionResolverTest extends \PHPUnit_Framework_TestCase
+class RequestAttributeVersionResolverTest extends \PHPUnit_Framework_TestCase
 {
     public function testInterface()
     {
         $this->assertInstanceof(
             VersionResolverInterface::class,
-            new HeaderVersionResolver()
+            new RequestAttributeVersionResolver()
         );
     }
 
@@ -32,10 +32,10 @@ class HeaderVersionResolverTest extends \PHPUnit_Framework_TestCase
     {
         $request = new Request();
 
-        $resolver = new HeaderVersionResolver();
+        $resolver = new RequestAttributeVersionResolver();
         $this->assertFalse($resolver->resolve($request));
 
-        $request->headers->set('X-Accept-Version', 'v1');
+        $request->attributes->set('version', 'v1');
         $this->assertEquals('v1', $resolver->resolve($request));
     }
 }

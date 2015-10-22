@@ -11,8 +11,8 @@
 
 namespace EXSyst\Component\Api\Version\Resolver;
 
-use Symfony\Component\HttpFoundation\Request;
 use EXSyst\Component\Api\Version\VersionResolverInterface;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @author Ener-Getick <egetick@gmail.com>

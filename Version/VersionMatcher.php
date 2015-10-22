@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of the Api package.
+ *
+ * (c) EXSyst
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace EXSyst\Component\Api\Version;
 
 use Composer\Semver\Semver;
@@ -30,7 +39,7 @@ class VersionMatcher
      */
     public function match($constraint, $transform = true)
     {
-        if($transform && preg_match('/^v?[0-9]+(\.[0-9]+)*$/', $constraint)) {
+        if ($transform && preg_match('/^v?[0-9]+(\.[0-9]+)*$/', $constraint)) {
             $constraint = '^'.$constraint;
         }
 

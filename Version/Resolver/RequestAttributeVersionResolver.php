@@ -11,6 +11,7 @@
 
 namespace EXSyst\Component\Api\Version\Resolver;
 
+use EXSyst\Component\Api\Version\VersionResolverInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
