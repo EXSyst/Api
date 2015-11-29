@@ -20,6 +20,7 @@
 		"doctrine/annotations": "For using parameters annotations",
 		"symfony/validator": "For using parameters validation",
 		"symfony/http-foundation": "For using parameters validation and version resolvers",
+		"symfony/serializer": "For using the normalizers",
 		"composer/semver": "For using the version matcher"
 	},
 	"autoload": {
